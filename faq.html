@@ -106,7 +106,7 @@
 												<a class="dropdown-item" href="faq.html">F A Q</a>
 												<a class="dropdown-item" href="q&a.html">Q & A</a>
 											</div>
-											<button class="btn btn-izone btn-flat pull-right" onclick="#" style="background-color: #212b52; color: white; border: 1px solid #212b52;">작성</button>
+											<button class="btn btn-izone btn-flat pull-right" onclick="location='faq_write.html';" style="background-color: #212b52; color: white; border: 1px solid #212b52;">작성</button>
 											<p class="card-category">공지사항, FAQ, Q&A를 관리하는 페이지 입니다</p>
 											<br>
 											<!-- 검색 기능 -->
@@ -137,10 +137,69 @@
 													<th></th>
 												</thead>
 												<tbody>
-													<c:forEach var="faq" items="${fList}">
 														<tr>
-															<td>${faq.ccno}</td>
-															<td>${faq.title}</td>
+															<td>1</td>
+															<td>[결제] 주문 후 언제까지 입금해야 하나요?</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<button onclick="location='faq_content.html';">내용</button>
+																<form action="#" method="post">
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>[배송] 배송은 얼마나 걸리나요?</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<button onclick="#">내용</button>																
+																<form action="#" method="post">
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>[상품] 상품이 매진되었습니다. 언제 입고 될까요?</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<form action="#" method="post">
+																<button onclick="#">내용</button>
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>4</td>
+															<td>[환불] 환불 정책은 어떻게 되나요?</td>
 															<td>
 																yyyy년 MM월 dd일
 															</td>
@@ -154,11 +213,90 @@
 																<button onclick="#">내용</button>
 																<form action="#" method="post">
 																	<input type="hidden" name="ccno" value="${faq.ccno}">												
-																	<button type="button">삭제</button>
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
 																</form>
 															</td>
 														</tr>
-													</c:forEach>
+														<tr>
+															<td>5</td>
+															<td>[적립금] 적립금이 확인 되지 않습니다.</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<button onclick="#">내용</button>
+																<form action="#" method="post">
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>6</td>
+															<td>[기타] 고객센터 운영시간을 알고 싶습니다.</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<button onclick="#">내용</button>
+																<form action="#" method="post">
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>7</td>
+															<td>[기타] 화분 회사에 지원하고 싶습니다!</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<button onclick="#">내용</button>
+																<form action="#" method="post">
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>8</td>
+															<td>[기타] 광고 및 투자는 어떻게 하나요?</td>
+															<td>
+																yyyy년 MM월 dd일
+															</td>
+															<td>
+																yyyy년 MM월 dd일
+																<!-- <c:if test="${empty faq.modDate}">
+																미수정
+																</c:if> -->
+															</td>
+															<td>
+																<button onclick="#">내용</button>
+																<form action="#" method="post">
+																	<input type="hidden" name="ccno" value="${faq.ccno}">												
+																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
+																</form>
+															</td>
+														</tr>
 												</tbody>
 											</table>
 										</div>
