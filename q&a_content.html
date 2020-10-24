@@ -95,114 +95,109 @@
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="card strpied-tabled-with-hover">
-										<div class="card-header ">
-											<h4 class="card-title" style="display: inline-block;">Q & A</h4>
-											<a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #212b52; display: inline-block;">
-												<span class="no-icon" style="color: #212b52">카테고리</span>
-											</a>
-											<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-												<a class="dropdown-item" href="notice.html">공지사항</a>
-												<a class="dropdown-item" href="faq.html">F A Q</a>
-												<a class="dropdown-item" href="q&a.html">Q & A</a>
-											</div>
-											<!-- <button class="btn btn-izone btn-flat pull-right" onclick="location='${pageContext.request.contextPath}/admin/customer/q&a_write'" style="background-color: #212b52; color: white; border: 1px solid #212b52;">작성</button> -->
-											<p class="card-category">공지사항, FAQ, Q&A를 관리하는 페이지 입니다</p>
-											<br>
-											<!-- 검색 기능 -->
-											<div class="col-md-12 ">
-												<div class="pull-right" style="text-align: right;">
-													<div class="input-group pull-right" style="text-align: right !important;">
-														<select id="condition" class="y-form-control" name="condition" style="width: 100px;">
-															<option value="ccno">번호</option>
-															<option value="title">ID</option>
-															<option value="ccnoTitle">번호+ID</option>
-														</select>
-														<input type="text" class="y-form-control " name="keyword" id="keywordInput" placeholder="검색어" style="width: 200px;">
-														<span class="input-group-btn "> <input type="button" style="background-color: #212b52; color: white; display: inline-block;" value="검색" class="btn btn-izone btn-flat" id="searchBtn">
-														</span>
+									<div class="card">
+										<div class="card-header">
+											<h4 class="card-title">Q & A</h4>
+										</div>
+										<div class="card-body">
+											<div class="content">
+												<div class="row">
+													<div class="col-md-1">
+														<div class="form-group">
+															<label>번호</label>
+															<text class="form-control">1</text>
+														</div>
+													</div>
+													<div class="col-md-11">
+														<div class="form-group">
+															<label>제목</label>
+															<text class="form-control">1:1질문 테스트</text>
+														</div>
+													</div>
+
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label>내용</label>
+															<text class="form-control" style="height : 200px">1:1 질문 테스트 내용입니다 답변주세요.</text>
+														</div>
 													</div>
 												</div>
+												<form action="${pageContext.request.contextPath}/admin/customer/q&a_modify" method="post">
+													<input type="hidden" name="ccno" value="${qANDa.ccno}">
+													<!-- <button type="submit" class="btn btn-info btn-fill pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52; margin-left: 10px;">수정</button> -->
+												</form>
+												<button class="btn btn-info btn-fill pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;" onclick="location='q&a.html';">목록</button> &nbsp;
+												<button class="btn btn-info btn-fill pull-left" style="background-color: #212b52; color: white; border: 1px solid #212b52;" onclick="location='q&aComnt_write.html';">답글</button>
+
+												<div class="clearfix"></div>
+
 											</div>
-											<!-- <li class="nav-item dropdown" style="text-decoration: none;"> -->
 										</div>
-										<div class="content card-body table-full-width table-responsive">
-											<table class="table table-hover table-striped">
-												<!-- 게시글 목록 출력 -->
-												<thead>
-													<th>번호</th>
-													<th>제목</th>
-													<th>등록날짜</th>
-													<th>수정날짜</th>
-													<th></th>
-												</thead>
-												<tbody>
-														<tr>
-															<td>1</td>
-															<td>1:1질문 테스트</td>
-															<td>
-																yyyy년 MM월 dd일
-															</td>
-															<td>
-																	yyyy년 MM월 dd일
-																<!-- <c:if test="${empty qANDa.modDate}">
-																	미수정
-																</c:if> -->
-															</td>
-															<td>
-																<button onclick="location='q&a_content.html';">내용</button>
-																<form action="#" method="post">
-																	<input type="hidden" name="ccno" value="${qANDa.ccno}">												
-																	<button type="button" onclick="if(!confirm('정말로 삭제하시겠습니까?')){return false;}">삭제</button>
-																</form>
-															</td>
-														</tr>
-												</tbody>
-											</table>
-										</div>
-									</div>
-								</div>
-								<!-- 검색 기능 -->
-								<!-- <div class="col-md-12 ">
-									<div class="pull-right" style="text-align: right;">
-										<div class="input-group pull-right"
-											style="text-align: right !important;">
-											<select id="condition" class="y-form-control"
-												name="condition" style="width: 100px;">
-												<option value="mno">번호</option>
-												<option value="id">ID</option>
-												<option value="name">이름</option>
-											</select> <input type="text" class="y-form-control " name="keyword"
-												id="keywordInput" placeholder="검색어" style="width: 200px;">
-											<span class="input-group-btn "> <input type="button"
-												style="background-color: #9765da; color: white; display: inline-block;"
-												value="검색" class="btn btn-izone btn-flat" id="searchBtn">
-											</span>
-										</div>
-									</div>
-								</div> -->
-								<div class="col-md-12">
-									<!-- 페이징 처리 부분  -->
-									<div class="paging">
-										<ul class="pagination justify-content-center">
-											<!-- 이전 버튼 -->
-											<c:if test="${pc.prev}">
-												<li class="page-item"><a class="page-link" href="#" style="background-color: #212b52; margin-top: 0; height: 40px; color: white; border: 0px solid #d3d3d3; opacity: 0.8">이전</a></li>
-											</c:if>
-
-											<!-- 페이지 버튼 -->
-											<c:forEach var="pageNum" begin="${pc.beginPage}" end="${pc.endPage}">
-												<li class="page-item"><a href="#" class="page-link ${(pc.paging.page == pageNum) ? 'page-active' : ''}" style="margin-top: 0; height: 40px; color: #212b52; text-align: center; border: 1px solid #d3d3d3;">1</a></li>
-											</c:forEach>
-
-											<!-- 다음 버튼 -->
-											<c:if test="${pc.next}">
-												<li class="page-item"><a class="page-link" href="#" style="background-color: #212b52; margin-top: 0; height: 40px; color: white; border: 0px solid #d3d3d3; opacity: 0.8">다음</a></li>
-											</c:if>
-										</ul>
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-12" id="CommentsInput">
+									<div class="card">
+										<div class="card-header">
+											<button class="btn btn-info btn-fill pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;" onclick="onDisplay();">내용보기</button>
+											<h4 class="card-title">등록한 답변내용</h4>
+										</div>
+										<div class="card-body">
+											<div class="content" id="comntCont" style="display: none">
+												<c:forEach var="reply" items="${rList}">
+												<form action="${pageContext.request.contextPath}/comments/q&aComnt_modify">
+												<input type="hidden" name="rno" value="${reply.rno}">
+													<div class="row">
+														<div class="col-md-1">
+															<div class="form-group">
+																<label>답글번호</label>
+																<text class="form-control">1</text>
+															</div>
+														</div>
+														<div class="col-md-7">
+															<div class="form-group">
+																<label>제목</label>
+																<text class="form-control">1:1 문의 답글 테스트</text>
+															</div>
+														</div>
+														<div class="col-md-2">
+															<div class="form-group">
+																<label>등록날짜</label>
+																<text class="form-control">yyyy년 MM월 dd일</text>
+															</div>
+														</div>
+														<div class="col-md-2">
+															<div class="form-group">
+																<label>수정날짜</label>
+																<text class="form-control">yyyy년 MM월 dd일
+																</text>
+															</div>
+														</div>
+													</div>
+													<div class="row">
+														<div class="col-md-12">
+															<div class="form-group">
+																<label>내용</label>
+																<text class="form-control" style="height: 200px">1:1 문의 테스트 글에 대한 답글입니다.</text>
+															</div>
+														</div>
+													</div>
+													<button type="button" onclick="location='q&aComnt_modify.html';" class="btn btn-info btn-fill pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;">수정</button>
+												</form>
+
+												<div class="clearfix"></div>
+													<hr style="border:1px dotted #a0a0a0;"/>
+												</c:forEach>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							
 						</div>
 					</div>
             <footer class="footer">
@@ -228,6 +223,19 @@
         </div>
     </div>
 </body>
+<script>
+
+function onDisplay() {
+	if($("#comntCont").css("display") == "none"){
+		$("#comntCont").show();
+	}else{
+		$("#comntCont").hide();
+	}
+}
+function offDisplay() {
+	$('#comntCont').hide();
+}
+</script>
 <!--   Core JS Files   -->
 <script src="assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
