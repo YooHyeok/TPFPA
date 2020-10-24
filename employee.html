@@ -17,7 +17,15 @@
     <link href="assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/css/demo.css" rel="stylesheet" />
-
+	<script>
+	function check(){
+		if($.trim($('#empName').val())==''){
+		alert('사원 이름을 입력하세요!');
+		$('#empName').val('').focus();
+		return false;
+		}
+	}
+	</script>
 </head>
 
 <body>
@@ -99,7 +107,7 @@
 									<div class="card">
 										<form action="#" method="post" onsubmit="return check();">
 											<div class="card-header">
-												<button type="button" class="btn btn-izone btn-flat pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;">등록</button>
+												<button type="button" onclick="return check();" class="btn btn-izone btn-flat pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;">등록</button>
 
 												<h4 class="card-title">사원 등록</h4>
 											</div>
