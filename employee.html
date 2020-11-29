@@ -24,6 +24,11 @@
 		$('#empName').val('').focus();
 		return false;
 		}
+		else{
+			alert('성공적으로 등록되었습니다!')
+			$('#empName').val('');
+			return false;
+		}
 	}
 	</script>
 </head>
@@ -201,14 +206,52 @@
 													<th>부서</th>
 													<th>직급</th>
 													<th>권한</th>
-													<th>비고</th>
+													<th>관리자 권한</th>
 													<th>상태</th>
-													<th></th>
+													<th>비활성화/활성화</th>
 												</thead>
 												<tbody>
 													<c:forEach var="emp" items="${eList}">
 														<tr>
 															<td>1</td>
+															<td>
+																fp_admin01
+															</td>
+															<td>
+																
+															</td>
+															<td>유재혁</td>
+															<td>
+																개발
+															</td>
+															<td>
+																사원
+															</td>
+															<td>
+																관리자 일반
+															</td>
+
+															<td>
+																
+															</td>
+															<td data-true="${emp.empEnabled}">
+																활성화①
+
+															</td>
+															<td>
+																<form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="비활성화" onclick="if(!confirm('회원 정보와 함께 비활성화 됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
+																</form>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
+																</form> -->
+															</td>
+
+														</tr>
+														<tr>
+															<td>2</td>
 															<td>
 																<c:if test="${empty emp.empId}">미발급</c:if>
 															</td>
@@ -218,12 +261,61 @@
 																		<input type="button" onclick="location='signUp.html';"value="아이디 발급" />
 																</c:if>
 															</td>
-															<td>대통령</td>
+															<td>홍길동</td>
 															<td>
-																<c:forEach var="dept" items="${emp.deptList}">총무</c:forEach>
+																<c:forEach var="dept" items="${emp.deptList}">물류</c:forEach>
 															</td>
 															<td>
-																<c:forEach var="po" items="${emp.poList}">회장</c:forEach>
+																<c:forEach var="po" items="${emp.poList}">알바</c:forEach>
+															</td>
+
+															<td>
+																<c:set var="flag" value="true" />
+																<c:forEach var="auth" items="${emp.authList}">
+																	<c:if test="${auth.authority == 'ROLE_ADMIN'}">
+																		
+																		<c:set var="flag" value="false" />
+																	</c:if>
+																	<c:if test="${auth.authority == 'ROLE_USER'}"></c:if>
+																</c:forEach>
+															</td>
+
+															<td>
+																
+															</td>
+															<td data-true="${emp.empEnabled}">
+																활성화①
+
+															</td>
+															<td>
+																<form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="비활성화" onclick="if(!confirm('회원 정보와 함께 비활성화 됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
+																</form>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
+																</form> -->
+															</td>
+
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>
+																<c:if test="${empty emp.empId}">fp_project01</c:if>
+															</td>
+															<td>
+																<!-- <c:if test="${empty emp.empId}">
+
+																		<input type="button" onclick="location='signUp.html';"value="아이디 발급" />
+																</c:if> -->
+															</td>
+															<td>윤신영</td>
+															<td>
+																<c:forEach var="dept" items="${emp.deptList}">기획</c:forEach>
+															</td>
+															<td>
+																<c:forEach var="po" items="${emp.poList}">사원</c:forEach>
 															</td>
 
 															<td>
@@ -231,6 +323,55 @@
 																<c:forEach var="auth" items="${emp.authList}">
 																	<c:if test="${auth.authority == 'ROLE_ADMIN'}">
 																		관리자
+																		<c:set var="flag" value="false" />
+																	</c:if>
+																	<c:if test="${auth.authority == 'ROLE_USER'}">일반</c:if>
+																</c:forEach>
+															</td>
+
+															<td>
+																
+															</td>
+															<td data-true="${emp.empEnabled}">
+																비활성화②
+
+															</td>
+															<td>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="삭제" onclick="if(!confirm('회원 정보와 함께 삭제됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
+																</form> -->
+																<form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+
+														</tr>
+														<tr>
+															<td>4</td>
+															<td>
+																<c:if test="${empty emp.empId}">fp_project02</c:if>
+															</td>
+															<td>
+																<!-- <c:if test="${empty emp.empId}">
+
+																		<input type="button" onclick="location='signUp.html';"value="아이디 발급" />
+																</c:if> -->
+															</td>
+															<td>박성은</td>
+															<td>
+																<c:forEach var="dept" items="${emp.deptList}">기획</c:forEach>
+															</td>
+															<td>
+																<c:forEach var="po" items="${emp.poList}">인턴</c:forEach>
+															</td>
+
+															<td>
+																<c:set var="flag" value="true" />
+																<c:forEach var="auth" items="${emp.authList}">
+																	<c:if test="${auth.authority == 'ROLE_ADMIN'}">
+																		
 																		<c:set var="flag" value="false" />
 																	</c:if>
 																	<c:if test="${auth.authority == 'ROLE_USER'}">일반</c:if>
@@ -259,15 +400,201 @@
 															<td>
 																<form action="#">
 																	<input type="hidden" name="empNo" value="${emp.empNo}" />
-																	<input type="submit" value="삭제" onclick="if(!confirm('정말로 삭제하시겠습니까??')){return false;}">
+																	<input type="submit" value="비활성화" onclick="if(!confirm('회원 정보와 함께 비활성화 됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
 																</form>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
+																</form> -->
+															</td>
+
+														</tr>
+														<tr>
+															<td>5</td>
+															<td>
+																<c:if test="${empty emp.empId}">fp_general02</c:if>
+															</td>
+															<td>
+																<!-- <c:if test="${empty emp.empId}">
+
+																		<input type="button" onclick="location='signUp.html';"value="아이디 발급" />
+																</c:if> -->
+															</td>
+															<td>강감찬</td>
+															<td>
+																<c:forEach var="dept" items="${emp.deptList}">총무</c:forEach>
+															</td>
+															<td>
+																<c:forEach var="po" items="${emp.poList}">인턴</c:forEach>
+															</td>
+
+															<td>
+																<c:set var="flag" value="true" />
+																<c:forEach var="auth" items="${emp.authList}">
+																	<c:if test="${auth.authority == 'ROLE_ADMIN'}">
+																		
+																		<c:set var="flag" value="false" />
+																	</c:if>
+																	<c:if test="${auth.authority == 'ROLE_USER'}">일반</c:if>
+																</c:forEach>
+															</td>
+
+															<td>
+																<!-- <c:if test="${flag == true }">
+																	<c:if test="${emp.empId != null }">
+																		<form action="#">
+																			<input type="hidden" name="empId" value="${emp.empId}" />
+																			<input type="submit" value="관리자 권한" onclick="if(!confirm('관리자 권한을 부여하시겠습니까?')){return false;}">
+																		</form>
+																	</c:if>
+																	<c:if test="${emp.empId == null }">
+																	</c:if>
+																</c:if>
+																<c:if test="${flag != true }">
+																
+																</c:if> -->
+															</td>
+															<td data-true="${emp.empEnabled}">
+																비활성화②
+
+															</td>
+															<td>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="비활성화" onclick="if(!confirm('회원 정보와 함께 비활성화 됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
+																</form> -->
 																<form action="#">
 																	<input type="hidden" name="empNo" value="${emp.empNo}" />
-																	<input type="submit" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
 																</form>
 															</td>
 
 														</tr>
+														<tr>
+															<td>6</td>
+															<td>
+																<c:if test="${empty emp.empId}">fp_person01</c:if>
+															</td>
+															<td>
+																<!-- <c:if test="${empty emp.empId}">
+
+																		<input type="button" onclick="location='signUp.html';"value="아이디 발급" />
+																</c:if> -->
+															</td>
+															<td>안준언</td>
+															<td>
+																<c:forEach var="dept" items="${emp.deptList}">인사</c:forEach>
+															</td>
+															<td>
+																<c:forEach var="po" items="${emp.poList}">사원</c:forEach>
+															</td>
+
+															<td>
+																<c:set var="flag" value="true" />
+																<c:forEach var="auth" items="${emp.authList}">
+																	<c:if test="${auth.authority == 'ROLE_ADMIN'}">
+																		관리자
+																		<c:set var="flag" value="false" />
+																	</c:if>
+																	<c:if test="${auth.authority == 'ROLE_USER'}">일반</c:if>
+																</c:forEach>
+															</td>
+
+															<td>
+																<!-- <c:if test="${flag == true }">
+																	<c:if test="${emp.empId != null }">
+																		<form action="#">
+																			<input type="hidden" name="empId" value="${emp.empId}" />
+																			<input type="submit" value="관리자 권한" onclick="if(!confirm('관리자 권한을 부여하시겠습니까?')){return false;}">
+																		</form>
+																	</c:if>
+																	<c:if test="${emp.empId == null }">
+																	</c:if>
+																</c:if>
+																<c:if test="${flag != true }">
+																
+																</c:if> -->
+															</td>
+															<td data-true="${emp.empEnabled}">
+																활성화①
+
+															</td>
+															<td>
+																<form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="비활성화" onclick="if(!confirm('회원 정보와 함께 비활성화 됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
+																</form>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
+																</form> -->
+															</td>
+
+														</tr>
+														<tr>
+															<td>7</td>
+															<td>
+																<c:if test="${empty emp.empId}">fp_general01</c:if>
+															</td>
+															<td>
+																<!-- <c:if test="${empty emp.empId}">
+
+																		<input type="button" onclick="location='signUp.html';"value="아이디 발급" />
+																</c:if> -->
+															</td>
+															<td>권누리</td>
+															<td>
+																<c:forEach var="dept" items="${emp.deptList}">총무</c:forEach>
+															</td>
+															<td>
+																<c:forEach var="po" items="${emp.poList}">사원</c:forEach>
+															</td>
+
+															<td>
+																<c:set var="flag" value="true" />
+																<c:forEach var="auth" items="${emp.authList}">
+																	<c:if test="${auth.authority == 'ROLE_ADMIN'}">
+																		관리자
+																		<c:set var="flag" value="false" />
+																	</c:if>
+																	<c:if test="${auth.authority == 'ROLE_USER'}">일반</c:if>
+																</c:forEach>
+															</td>
+
+															<td>
+																<!-- <c:if test="${flag == true }">
+																	<c:if test="${emp.empId != null }">
+																		<form action="#">
+																			<input type="hidden" name="empId" value="${emp.empId}" />
+																			<input type="submit" value="관리자 권한" onclick="if(!confirm('관리자 권한을 부여하시겠습니까?')){return false;}">
+																		</form>
+																	</c:if>
+																	<c:if test="${emp.empId == null }">
+																	</c:if>
+																</c:if> -->
+																<c:if test="${flag != true }">
+																
+																</c:if>
+															</td>
+															<td data-true="${emp.empEnabled}">
+																활성화①
+
+															</td>
+															<td>
+																<form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="비활성화" onclick="if(!confirm('회원 정보와 함께 비활성화 됩니다 \n정말로 삭제하시겠습니까??')){return false;}">
+																</form>
+																<!-- <form action="#">
+																	<input type="hidden" name="empNo" value="${emp.empNo}" />
+																	<input type="submit" value="활성화" onclick="if(!confirm('회원 정보가 함께 복구 됩니다 \n 활성화 하시겠습니까??')){return false;}">
+																</form> -->
+															</td>
+
+														</tr>
+														
+														
+														
 													</c:forEach>
 												</tbody>
 											</table>

@@ -144,13 +144,238 @@
 													<c:forEach var="mem" items="${mList}">
 														<tr>
 															<td>1</td>
-															<td>admin</td>
+															<td>fp_admin01</td>
 															<td>유재혁</td>
-															<td>대통령</td>
+															<td>부팀장</td>
 															<td>yjk7454@naver.com</td>
 															<td>남자</td>
 															<td>1992년 10월 23일</td>
 															<td>다이아몬드</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>2</td>
+															<td>fp_project01</td>
+															<td>윤신영</td>
+															<td>팀장의꿈</td>
+															<td>xx1@xxxxx.com</td>
+															<td>남자</td>
+															<td>1994년 mm월 dd일</td>
+															<td>다이아몬드</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															비활성화②
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>3</td>
+															<td>fp_project02</td>
+															<td>박성은</td>
+															<td>오류왕</td>
+															<td>xx2@xxxxx.com</td>
+															<td>여자</td>
+															<td>1994년 mm월 dd일</td>
+															<td>골드</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>4</td>
+															<td>fp_general02</td>
+															<td>강감찬</td>
+															<td>회계왕</td>
+															<td>xx3@xxxxx.com</td>
+															<td>남자</td>
+															<td>1992년 10월 23일</td>
+															<td>다이아몬드</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															비활성화②
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>5</td>
+															<td>fp_person01</td>
+															<td>안준언</td>
+															<td>긍정왕</td>
+															<td>xx4@xxxxx.com</td>
+															<td>남자</td>
+															<td>1989년 mm월 dd일</td>
+															<td>플래티넘</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>6</td>
+															<td>fp_general01</td>
+															<td>권누리</td>
+															<td>힘든삶</td>
+															<td>xx5@xxxxx.com</td>
+															<td>여자</td>
+															<td>1994년 mm월 dd일</td>
+															<td>새싹</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>7</td>
+															<td>shineFull2</td>
+															<td>진기주</td>
+															<td>이빛채운</td>
+															<td>shineFull2@xxxxx.com</td>
+															<td>여자</td>
+															<td>1989년 01월 26일</td>
+															<td>새싹</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>8</td>
+															<td>babyPeople</td>
+															<td>유아인</td>
+															<td>어이가없네</td>
+															<td>babyPeople@xxxxx.com</td>
+															<td>남자</td>
+															<td>1986년 10월 06일</td>
+															<td>다이아몬드</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>9</td>
+															<td>yamMaa</td>
+															<td>마동석</td>
+															<td>아트박스사장</td>
+															<td>yamMaa@xxxxx.com</td>
+															<td>남자</td>
+															<td>1986년 10월 06일</td>
+															<td>실버</td>
+															<td>yyyy년 MM월 dd일
+															</td>
+															<td>
+															활성화①
+															</td>
+															<td>
+																<form action="${pageContext.request.contextPath}/admin/member_delete">
+																	<input type="hidden" name="mno" value="${mem.mno}"/>
+																	<input type="button" value="탈퇴" onclick="if(!confirm('정말로 탈퇴 하겠습니까??')){return false;}">
+																</form>
+																<form action="${pageContext.request.contextPath}/admin/member_restore">
+																	<input type="hidden" name="mno" value="${mem.mno}" />
+																	<input type="button" value="복구" onclick="if(!confirm('복구 하시겠습니까??')){return false;}">
+																</form>
+															</td>
+														</tr>
+														<tr>
+															<td>10</td>
+															<td>yooHyeok</td>
+															<td>유혁</td>
+															<td>보컬리스트</td>
+															<td>yjou7454@naver.com</td>
+															<td>남자</td>
+															<td>1992년 10월 23일</td>
+															<td>실버</td>
 															<td>yyyy년 MM월 dd일
 															</td>
 															<td>
