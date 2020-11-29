@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -17,25 +16,7 @@
     <link href="assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/css/demo.css" rel="stylesheet" />
-<style type="text/css">
-.modal {
-	position: fixed;
-	top: -34%;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	z-index: 1050;
-	display: none;
-	overflow: hidden;
-	outline: 0;
-}
-
-#ifModal {
-	width: 450px;
-	height: 700px;
-	border: 1px;
-}
-</style>
+   
 </head>
 
 <body>
@@ -59,7 +40,7 @@
 							<i class="nc-icon nc-satisfied"></i>
 							<p>쿠폰 관리</p>
 						</a></li>
-					<li><a class="nav-link" href="./brand.html">
+					<li class="nav-item active"><a class="nav-link" href="./brand.html">
 							<i class="nc-icon nc-tag-content"></i>
 							<p>입점 관리</p>
 						</a></li>
@@ -71,7 +52,7 @@
 							<i class="nc-icon nc-badge"></i>
 							<p>회원 관리</p>
 						</a></li>
-					<li class="nav-item active"><a class="nav-link" href="./delivery.html">
+					<li><a class="nav-link" href="./delivery.html">
 							<i class="nc-icon nc-delivery-fast"></i>
 							<p>주문 배송</p>
 						</a></li>
@@ -90,7 +71,7 @@
             <!-- Navbar -->
             <nav class="navbar navbar-expand-lg " color-on-scroll="500">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#pablo">배송 관리</a>
+                    <a class="navbar-brand" href="#pablo">입점 관리</a>
                     <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-bar burger-lines"></span>
                         <span class="navbar-toggler-bar burger-lines"></span>
@@ -113,85 +94,120 @@
             <div class="content">
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col-md-3">
+								<div class="col-md-8">
 									<div class="card">
 										<div class="card-header">
-											<h4 class="card-title">배송조회(sweettracker API)</h4>
-											<label>RESTAPI로 아이디를 검색한 후 히든태그 추가하기 </label>
+											<h4 class="card-title">브랜드 정보</h4>
 										</div>
-										<form action="http://info.sweettracker.co.kr/tracking/5" method="post" target="paramModal">
-											<div class="card-body">
+										<div class="card-body">
+												<form action="#" method="post">
+												<input type="hidden" name="bno" value="${brand.bno}"> 
+												<!-- url등록하기 -->
 												<div class="row">
-													<div class="col-md-12">
-														<div class="form-group" style="margin:0 auto; ">
-															<label>아이디</label><b> </b><b id="idChk"></b>
-															<div style="display: flex">
-															<input type="text" class="form-control" id="idBox" placeholder="ID">
-															<button class="btn btn-flat " id="searchId" style="background-color: #212b52; color: white; border: 1px solid #212b52; float:right; ">검색</button>
-															</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>Company</label>
+															<text class="form-control">엘오케이(유)</text>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>브랜드명</label>
+															<text class="form-control" >키엘</text>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>사업자 번호</label>
+															<text class="form-control" >
+															220-81-73483
+															</text>
 														</div>
 													</div>
 												</div>
-												<br>
-												<div class="row" style="display:none;">
+												<div class="row">
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>대표</label>
+															<text class="form-control" >MARCOS HARNAY CHRISTIAN</text>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label>전화번호</label>
+															<text class="form-control"  >02-3497-9836</text>
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="form-group">
+															<label for="exampleInputEmail1">이메일</label>
+															<text class="form-control" >sungjin.hwang@loreal.com</text>
+														</div>
+													</div>
+												</div>
+												<div class="row">
 													<div class="col-md-3">
 														<div class="form-group">
-															<!-- <label for="t_key">API key</label>
-															<input type="text" class="form-control" id="t_key" name="t_key" placeholder="제공받은 APIKEY"> -->
-															<input type="hidden" name="t_key" value="nZYUkdrByIEsjU8GKc7EOA">
-															<!-- 제공받은 APIKEY -->
-														</div>
-														<div class="form-group fg1">
-															<!-- <label for="t_code">택배사 코드</label>
-															<input type="text" class="form-control" name="t_code" id="t_code" placeholder="택배사 코드"> -->
-															<input type="hidden" name="t_code">
-															<!-- 택배사 코드 -->
-														</div>
-														<div class="form-group fg2">
-															<!-- <label for="t_invoice">운송장 번호</label>
-															<input type="text" class="form-control" name="t_invoice" id="t_invoice" placeholder="운송장 번호"> -->
-															<input type="hidden" name="t_invoice">
-															<!-- 운송장 번호 -->
+															<label>우편 번호</label>
+															<text class="form-control" >06164</text>
 														</div>
 													</div>
 												</div>
-												<button class="btn btn-flat pull-right" id="popup_open_btn" data-toggle="modal" data-target="#myModal1" href="#pablo" value="${coup.couponName}" style="background-color: #212b52; color: white; border: 1px solid #212b52; margin-bottom: 15px;">배송조회</button>
-											</div>
-										</form>
+												<div class="row">
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>도로명 주소</label>
+															<text class="form-control" >서울특별시 강남구 영동대로 517</text>
+														</div>
+													</div>
 
+													<div class="col-md-6">
+														<div class="form-group">
+															<label>지번 주소</label>
+															<text class="form-control" >서울특별시 강남구 삼성동 159번지</text>
+														</div>
+													</div>
+												</div>
+												<!-- span태그가 없으면 팝업창이 종료되지 않습니다. -->
+												<span id="guide" style="color: #999; display: none"></span>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label>참고 주소</label>
+															<text class="form-control" >(삼성동, 아셈타워 31층)</text>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label>상세 주소</label>
+															<text class="form-control" >아셈타워 31층</text>
+														</div>
+													</div>
+												</div>
+
+												<div class="row">
+													<div class="col-md-12">
+														<div class="form-group">
+															<label>브랜드 소개</label>
+															<text rows="5" cols="80" class="form-control" >-</text>
+														</div>
+													</div>
+												</div>
+
+												<input type="button" class="btn btn-flat pull-right" value="수정" onclick="location='brandModify.html';"style="background-color: #212b52; color: white; border: 1px solid #212b52;margin-left: 10px;"/>
+												</form>
+												<button class="btn btn-flat pull-right" onclick="location='brand.html';" style="background-color: #212b52; color: white; border: 1px solid #212b52;">
+												목록
+												</button>
+												<div class="clearfix"></div>
+										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
-						<!-- Mini Modal -->
-						<div class="modal fade modal modal-primary" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-							<div class="modal-dialog" style="margin-bottom: 0; padding-top: 100px;">
-								<div class="modal-content" style="border: 3px solid #00498c; border-radius: 20px; height: 800px;">
-
-									<div class="card-header" id="idChk2">
-										<h4 class="card-title">XX님 배송조회(sweettracker API)</h4>
-									</div>
-									<div class="card-body" style="height: 400px">
-										<div class="row">
-											<div class="col-md-3">
-												<iframe id="ifModal" name="paramModal" style="height: 400px"> </iframe>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-3"></div>
-										</div>
-									</div>
-									<div class="modal-footer pull-right" style="height: 100px">
-										<form action="#" method="post">
-											<button type="button" class="btn btn-simple btn-flat pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52; margin-left: 180px;" data-dismiss="modal" onclick="#">확인</button>
-										</form>
-									</div>
-
-
-								</div>
-							</div>
-						</div>
-						<!-- End Modal -->
 					</div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -215,7 +231,9 @@
             </footer>
         </div>
     </div>
+ 
 </body>
+
 <!--   Core JS Files   -->
 <script src="assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
 <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
@@ -232,5 +250,4 @@
 <script src="assets/js/light-bootstrap-dashboard.js?v=2.0.0 " type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="assets/js/demo.js"></script>
-
 </html>
