@@ -40,7 +40,7 @@ function check(){
 		$('#coupName').val('').focus();
 		return false;
 	}
-	if(($.trim($('#discMoney').val())=='') && ($.trim($('#discPercent').val())=='')){
+	else if(($.trim($('#discMoney').val())=='') && ($.trim($('#discPercent').val())=='')){
 		alert('할인액과 할인률중 하나 이상 입력하세요!');
 		$('#discMoney').val('').focus();
 		return false;
@@ -50,14 +50,19 @@ function check(){
 		$('#discPercent').val('').focus();
 		return false;
 	}*/
-	if($.trim($('#startD').val())==''){
+	else if($.trim($('#startD').val())==''){
 		alert('쿠폰 시작기간을 입력하세요!');
 		$('#startD').val('').focus();
 		return false;
 	}
-	if($.trim($('#endD').val())==''){
+	else if($.trim($('#endD').val())==''){
 		alert('쿠폰 마감기간을 입력하세요!');
 		$('#endD').val('').focus();
+		return false;
+	}
+	else{
+		alert('쿠폰 등록에 성공했습니다!');
+		location.href = "coupon.html";
 		return false;
 	}
 }
@@ -142,7 +147,7 @@ function check(){
 									<form action="${pageContext.request.contextPath}/admin/couponRegist" method="post" onsubmit="return check();">
 										<div class="card">
 											<div class="card-header">
-												<button type="submit" class="btn btn-izone btn-flat pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;">등록</button>
+												<button type="button" class="btn btn-izone btn-flat pull-right" style="background-color: #212b52; color: white; border: 1px solid #212b52;" onclick="return check();" >등록</button>
 												<h4 class="card-title">쿠폰 등록</h4>
 											</div>
 											<div class="card-body">
