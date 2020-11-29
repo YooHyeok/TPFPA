@@ -18,7 +18,19 @@
     <link href="assets/css/demo.css" rel="stylesheet" />
 
 </head>
-
+<script>
+function checkSearch(){
+	if($.trim($('#keywordInput').val())==''){
+		alert('검색할 키워드를 입력하세요!');
+		$('#keywordInput').val('').focus();
+		return false;
+	}
+	else{
+		location.href = "faq.html";
+		return false;
+	}
+}
+</script>
 <body>
     <div class="wrapper">
 		<div class="sidebar" data-color="blue" >
@@ -119,7 +131,7 @@
 															<option value="ccnoTitle">번호+ID</option>
 														</select>
 														<input type="text" class="y-form-control " name="keyword" id="keywordInput" placeholder="검색어" style="width: 200px;">
-														<span class="input-group-btn "> <input type="button" style="background-color: #212b52; color: white; display: inline-block;" value="검색" class="btn btn-izone btn-flat" id="searchBtn">
+														<span class="input-group-btn "> <input type="button" onclick="return checkSearch();" style="background-color: #212b52; color: white; display: inline-block;" value="검색" class="btn btn-izone btn-flat" id="searchBtn">
 														</span>
 													</div>
 												</div>
