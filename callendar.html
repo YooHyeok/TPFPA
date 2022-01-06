@@ -18,7 +18,15 @@
     <link href="assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/css/demo.css" rel="stylesheet" />
-	    <link href='assets/css/fullcalendar/main.css' rel='stylesheet' />
+	<link href='assets/css/fullcalendar/main.css' rel='stylesheet' />
+	<style type="text/css">
+	  #calendar .fc-toolbar-chunk{
+	  	display:flex;
+	  }
+	  #calendar .fc-event-title{
+	  	color:white;
+	  }
+	</style>
     <script src='assets/js/fullcalendar/main.js'></script>
     <script>
 	document.addEventListener('DOMContentLoaded', function() {
@@ -27,6 +35,30 @@
 	      initialView: 'dayGridMonth'
 	    , height: 850
 	    , locales:'ko'
+	    , selectable : true
+	    , googleCalendarApiKey: 'AIzaSyCFHiW10ffeGUfMc99IAX1TmTldbMncry8'
+	    , eventSources : {
+			googleCalendarId : 'qduatr3seur835pk4aolok2900@group.calendar.google.com'
+				 , className : 'ko-holiday'
+				   , display :'background'
+					 , color : '#FF0000'
+				  , textColor: '#ffffff'
+		}
+	    , dayHeaders : true
+	    , headerToolbar : {
+			   start : 'dayGridMonth listMonth'
+			, center : 'prev title next'
+			, end : 'today'
+		}
+	    ,titleFormat : { month: '2-digit', year: 'numeric'}
+	    ,noEventsContent: '이달의 등록된 일정이 없습니다.'
+	    , dayMaxEventRows : true
+	    ,eventClick : function(info) {
+			alert('Event: ' + info.event.title); // title 출력
+//			console.log(info.event.id);
+			info.jsEvent.preventDefault();//javascript에서 지원하는 preventDefault() 메소드 이벤트 실행 후 다음이벤트에 대한 연결을 끊는다.
+		}
+	    , events: 'en.usa#holiday@group.v.calendar.google.com',
 	    
 	    });
 	    
@@ -121,7 +153,8 @@
                                     <h4 class="card-title">스케줄 조정</h4>
                                     <p class="card-category">일정을 관리합니다.</p>
                                 </div>
-                                    	<div id="calendar" style="width:1560px; padding:0 0 20px 20px;"></div><!-- 캘린더 그리기 -->
+                                    	<div id="calendar" style="padding:20px 20px;"></div><!-- 캘린더 그리기 -->
+
                                     
                                 <!-- <div class="card-footer ">
                                     <div class="legend">
